@@ -207,7 +207,7 @@ export default function Home({zonnes}) {
                 <label>Time Zone</label>
                 <select  required
               onChange={e => setZone(e.target.value)} value={zone}
-              style={{borderRadius:'15px', outline:'none'}} class="form-select shadow-lg" aria-label="Default select example">
+              style={{borderRadius:'15px', outline:'none'}} className="form-select shadow-lg" aria-label="Default select example">
                 <option selected>Open this select menu</option>
                 {zonnes.map((zonee) => (
               <option key={zonee} value={zonee}>{zonee}</option>

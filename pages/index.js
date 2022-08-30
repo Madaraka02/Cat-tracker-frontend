@@ -7,6 +7,7 @@ import { BiCheck, BiPlus } from "react-icons/bi";
 import { AiOutlineEdit, AiOutlineStop } from "react-icons/ai";
 import { useRouter } from 'next/router'
 import { BsBoxArrowInRight } from "react-icons/bs";
+import Link from 'next/link'
 
 
 
@@ -114,9 +115,9 @@ export default function Home({zonnes}) {
 
         <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor:'blue'}}>
     <div className="container-fluid">
-      <a className="navbar-brand" href="/"
+      <Link className="navbar-brand" href="/"
       style={{fontWeight:"bold"}}
-      >Cat Tracker</a>
+      >Cat Tracker</Link>
 
       <div className="" id="navbarText">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -143,11 +144,11 @@ export default function Home({zonnes}) {
           <div className='col-md-2 mt-2 mb-2'></div>
           <div className='col-md-8 mt-2 mb-2'>
           {status?.type === 'success' && 
-          <p class="alert alert-success" role="alert">
+          <p className="alert alert-success" role="alert">
           Cat added successfully
         </p>}
       {status?.type === 'error' && (
-        <p class="alert alert-danger" role="alert">
+        <p className="alert alert-danger" role="alert">
         Sorry an error occured
       </p>
       )}
@@ -190,26 +191,26 @@ export default function Home({zonnes}) {
               <form onSubmit={submitHand} className='pb-4'>
               <div className="row">
                 <div className="form-group col">
-                  <label for="inputName">Name</label>
+                  <label>Name</label>
                   <input required
                   style={{borderRadius:'15px', outline:'none'}}
                   onChange={e => setName(e.target.value)} value={name} type="text" className="form-control shadow-lg" id="inputName" />
                 </div>
                 <div className="form-group col">
-                  <label for="inputColor">Color</label>
+                  <label>Color</label>
                   <input required
                   style={{borderRadius:'15px', outline:'none'}} 
                   onChange={e => setColor(e.target.value)} value={color} type="text" className="form-control shadow-lg" id="inputColor" />
                 </div>
               </div>
               <div className="form-group">
-                <label for="inputZone">Time Zone</label>
+                <label>Time Zone</label>
                 <select  required
               onChange={e => setZone(e.target.value)} value={zone}
               style={{borderRadius:'15px', outline:'none'}} class="form-select shadow-lg" aria-label="Default select example">
                 <option selected>Open this select menu</option>
                 {zonnes.map((zonee) => (
-              <option value={zonee}>{zonee}</option>
+              <option key={zonee} value={zonee}>{zonee}</option>
 
             ))}
                

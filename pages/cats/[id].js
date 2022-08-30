@@ -75,11 +75,11 @@ function Cat({cat, zonnes}) {
             <div className='col-md-2'></div>
             <div className='col-md-8'>
             {status?.type === 'success' && 
-          <p class="alert alert-success" role="alert" onClick={() => router.push('/')}>
+          <p className="alert alert-success" role="alert" onClick={() => router.push('/')}>
           Cat updated successfully
         </p>}
       {status?.type === 'error' && (
-        <p class="alert alert-danger" role="alert">
+        <p className="alert alert-danger" role="alert">
         Sorry an error occured
       </p>
       )}
@@ -102,13 +102,13 @@ function Cat({cat, zonnes}) {
               <form onSubmit={submitHand} className='pb-4'>
                 
               <div className="form-group">
-                <label for="inputZone">Time Zone</label>
+                <label>Time Zone</label>
                 <select 
               onChange={e => setZone(e.target.value)} value={zone}
               style={{borderRadius:'15px', outline:'none'}} class="form-select shadow-lg" aria-label="Default select example">
                 <option selected>Open this select menu</option>
                 {zonnes.map((zonee) => (
-              <option value={zonee}>{zonee}</option>
+              <option key={zonee} value={zonee}>{zonee}</option>
 
             ))}
                

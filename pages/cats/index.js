@@ -16,7 +16,7 @@ function Cats({catss}) {
     return ( 
     <div> 
         {catss.map((cat) => (
-            <div>
+            <div key={cat.id}>
             <p >{cat.name}</p>
             <p>{cat.color}</p>
             <p>{cat.time_zone}</p>

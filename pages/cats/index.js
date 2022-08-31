@@ -2,28 +2,14 @@ import Axios from 'axios';
 import React, { useState } from 'react'
 import 'bootstrap/dist/css/bootstrap.css'
 
-function Cats({catss}) {
+function Cats() {
 
-    const apiUrl = 'http://127.0.0.1:8000/api'
-
-    const deleteCat = async (catId) => {
-        const response = await fetch(`http://127.0.0.1:8000/api/cats/${catId}/delete`,{
-            method: 'DELETE'
-        })
-        const data = await response.json()
-        console.log(data)
-    }
     return ( 
     <div> 
-        {catss.map((cat) => (
-            <div key={cat.id}>
-            <p >{cat.name}</p>
-            <p>{cat.color}</p>
-            <p>{cat.time_zone}</p>
-            <button className='btn btn-danger' onClick={() => deleteCat(cat.id)}>Delete</button>
+            <div >
+            <p >name</p>
+            {/* <button className='btn btn-danger' onClick={() => deleteCat(cat.id)}>Delete</button> */}
             </div>
-
-        ))}
     </div>
     )
     }
@@ -43,12 +29,12 @@ function Cats({catss}) {
 //     }
 //     } 
 
-export async function getStaticProps(context) {
-    // fetch the blog posts from the mock API
-    const res = await fetch('http://127.0.0.1:8000/api/cats');
-    const catss = await res.json();
+// export async function getStaticProps(context) {
+//     // fetch the blog posts from the mock API
+//     const res = await fetch('http://127.0.0.1:8000/api/cats');
+//     const catss = await res.json();
     
-    return {
-        props: { catss } // props will be passed to the page
-    };
-    } 
+//     return {
+//         props: { catss } // props will be passed to the page
+//     };
+//     } 

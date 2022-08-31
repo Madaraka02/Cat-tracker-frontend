@@ -115,9 +115,11 @@ export default function Home({zonnes}) {
 
         <nav className="navbar navbar-expand-lg navbar-dark" style={{backgroundColor:'blue'}}>
     <div className="container-fluid">
-      <Link className="navbar-brand" href="/"
-      style={{fontWeight:"bold"}}
-      >Cat Tracker</Link>
+      <Link href='/'> 
+      <a className="navbar-brand text-white"style={{fontWeight:"bold", color:'white'}}>
+        Cat Tracker
+        </a>
+      </Link>
 
       <div className="" id="navbarText">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">

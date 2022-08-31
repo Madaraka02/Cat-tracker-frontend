@@ -17,7 +17,7 @@ function Cat({cat, zonnes}) {
   
     useEffect(() => {
       setLoading(true)
-      fetch('http://127.0.0.1:8000/api/cats/${params.id}')
+      fetch('https://madaraka02.pythonanywhere.com/api/cats/${params.id}')
         .then((res) => res.json())
         .then((data) => {
           setCatss(data)

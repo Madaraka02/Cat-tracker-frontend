@@ -30,7 +30,7 @@ export default function Home({zonnes}) {
 
   useEffect(() => {
     setLoading(true)
-    fetch('http://127.0.0.1:8000/api/cats')
+    fetch('https://madaraka02.pythonanywhere.com/api/cats')
       .then((res) => res.json())
       .then((data) => {
         setCatss(data)
@@ -50,10 +50,10 @@ export default function Home({zonnes}) {
     getZones();
   }, [])
 
-  const apiUrl = 'http://127.0.0.1:8000/api'
+  const apiUrl = 'https://madaraka02.pythonanywhere.com/api'
 
   const deleteCat = async (catId) => {
-      const response = await fetch(`http://127.0.0.1:8000/api/cats/${catId}/delete`,{
+      const response = await fetch(`https://madaraka02.pythonanywhere.com/api/cats/${catId}/delete`,{
           method: 'DELETE'
       })
       const data = await response.json()

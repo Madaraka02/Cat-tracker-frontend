@@ -38,7 +38,7 @@ function Cat({cat, zonnes}) {
       var tt =  formatter.format(new Date())
 
 
-    const apiUrl = 'http://127.0.0.1:8000/api'
+    const apiUrl = 'https://madaraka02.pythonanywhere.com/api'
     const submitHand = async (e) =>{
         e.preventDefault();
         const options = {
@@ -140,7 +140,7 @@ export default Cat
 
 
 export const getServerSideProps = async ({ params }) => {
-    const { data } = await axios.get(`http://127.0.0.1:8000/api/cats/${params.id}`);
+    const { data } = await axios.get(`https://madaraka02.pythonanywhere.com/api/cats/${params.id}`);
     const ress = await fetch('http://worldtimeapi.org/api/timezone');
     const zonnes = await ress.json();
   
